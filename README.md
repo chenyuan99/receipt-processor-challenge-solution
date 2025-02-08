@@ -152,6 +152,48 @@ Breakdown:
 
 ---
 
+# Running with Docker
+
+### Prerequisites
+- Docker installed on your machine
+- Docker Compose installed on your machine
+
+### Steps to Run
+
+1. Build and start the container:
+```bash
+docker-compose up --build
+```
+
+2. The application will be available at:
+   - API Endpoints: http://localhost:8000/api/
+   - Admin Interface: http://localhost:8000/admin/
+
+3. (Optional) Create a superuser to access the admin interface:
+```bash
+docker-compose exec web python manage.py createsuperuser
+```
+
+### API Usage with Docker
+
+The API endpoints remain the same when running with Docker:
+
+- Process Receipt: `POST http://localhost:8000/api/receipts/process`
+- Get Points: `GET http://localhost:8000/api/receipts/{id}/points`
+
+### Development with Docker
+
+- The code is mounted as a volume, so changes will be reflected immediately
+- SQLite database is persisted in a Docker volume
+- Logs are visible in the Docker Compose output
+
+### Stopping the Application
+
+To stop the application:
+```bash
+docker-compose down
+```
+
 # FAQ
 
 ### How will this exercise be evaluated?

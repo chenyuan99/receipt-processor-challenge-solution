@@ -25,6 +25,7 @@ SECRET_KEY = "django-insecure-=ht3djsv$=%47^__!0(f256#r)g_o4gt_rse@2&cv*m9(0=imd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Set allowed hosts to all for development, but restrict to specific hosts in production
 ALLOWED_HOSTS = ["*"]
 
 
